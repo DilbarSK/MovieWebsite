@@ -1,0 +1,18 @@
+h1{
+    font-family: sans-serif;
+    background: linear-gradient(to right , rgb(158, 128, 240) , rgb(77, 57, 124));
+    color: rgb(226, 225, 226);
+}
+::-webkit-scrollbar{
+
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background: white;
+}
+
+*{
+    
+}
