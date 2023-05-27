@@ -6,8 +6,6 @@ const Movie = () => {
   const { movies } = useGlobalContext();
   return (
     <Wrapper>
-      <h1>Movie</h1>
-
       <section>
         {movies.map(cur => {
           const {imdbID , Title , Poster , Year} = cur

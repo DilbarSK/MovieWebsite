@@ -11,6 +11,7 @@ const AppProvider = ({ children }) => {
   const [query, setQuery] = useState("titanic");
 
   const get_data = async (API_URL) => {
+    setisLoading(true);
     try {
       const res = await fetch(API_URL);
       const data = await res.json();
@@ -18,8 +19,10 @@ const AppProvider = ({ children }) => {
         setisLoading(false);
         setMovie(data.Search);
         console.log(data);
+        setisLoading(false);
       } else {
         setisError({ show: false, msg: "data not found" });
+        setisLoading(false);
       }
     } catch (error) {
       console.log(error);
@@ -30,7 +33,7 @@ const AppProvider = ({ children }) => {
     let searchTimeOut = setTimeout(() => {
       get_data(`${API_URL}&s=${query}`);
     }, 2000);
-    return () => clearTimeout(searchTimeOut)
+    return () => clearTimeout(searchTimeOut);
   }, [query]);
 
   return (
